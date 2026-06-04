@@ -1,0 +1,303 @@
+/* Calculator Specific Styles */
+.calculator-page {
+  padding: 3rem 0;
+}
+
+/* Container for the 3 steps */
+.details-container {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem; /* Memberikan jarak yang sangat lega antar tabel */
+  margin-top: 2rem;
+  padding-bottom: 4rem;
+}
+
+/* Individual Card Styling */
+.detail-card {
+  display: flex;
+  flex-direction: column;
+  padding: 2rem;
+  background-color: var(--color-surface);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-md);
+  border: 1px solid var(--color-border);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.detail-card:hover {
+  box-shadow: var(--shadow-lg);
+  transform: translateY(-2px);
+}
+
+/* Header inside the Card */
+.detail-header {
+  display: flex;
+  align-items: flex-start;
+  gap: 1.25rem;
+  margin-bottom: 2rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.detail-header h3 {
+  font-size: 1.25rem;
+  color: var(--color-text-primary);
+  margin-bottom: 0.25rem;
+}
+
+.step-badge {
+  background-color: var(--color-primary);
+  color: white;
+  padding: 0.35rem 1rem;
+  border-radius: var(--radius-full);
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  white-space: nowrap;
+  box-shadow: 0 4px 10px rgba(79, 70, 229, 0.2);
+}
+
+.crit-badge {
+  display: inline-block;
+  padding: 0.2rem 0.6rem;
+  border-radius: 4px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  margin-left: 0.75rem;
+  text-transform: uppercase;
+}
+
+.badge-cost {
+  background-color: rgba(239, 68, 68, 0.15);
+  color: var(--color-danger);
+}
+
+.badge-benefit {
+  background-color: rgba(16, 185, 129, 0.15);
+  color: var(--color-success);
+}
+
+/* Placeholder for before calculation */
+.placeholder-box {
+  background-color: var(--color-bg);
+  border-radius: var(--radius-md);
+  padding: 2rem;
+  border: 2px dashed var(--color-border);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 200px;
+  text-align: center;
+}
+
+.step-icon-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 1.5rem;
+  color: var(--color-primary);
+  opacity: 0.4;
+  transition: opacity 0.3s ease;
+}
+
+.placeholder-box:hover .step-icon-wrapper {
+  opacity: 0.8;
+}
+
+/* Action Button Container */
+.calc-action {
+  margin-top: 1rem;
+}
+
+.calc-warning {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  color: var(--color-warning);
+  background-color: rgba(245, 158, 11, 0.1);
+  padding: 1.25rem;
+  border-radius: var(--radius-md);
+  margin-bottom: 2rem;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  font-weight: 500;
+  border: 1px solid rgba(245, 158, 11, 0.2);
+}
+
+.btn-large {
+  padding: 1.25rem 2.5rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  border-radius: var(--radius-full);
+  letter-spacing: 0.02em;
+}
+
+.btn-disabled {
+  opacity: 0.5;
+  cursor: not-allowed !important;
+  pointer-events: none;
+}
+
+.spin-animation {
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+/* Matrix Tables (Premium Styling) */
+.table-wrapper {
+  background-color: var(--color-bg);
+  border-radius: var(--radius-md);
+  overflow-x: auto;
+  border: 1px solid var(--color-border);
+}
+
+.matrix-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  font-size: 0.95rem;
+}
+
+.matrix-table th, .matrix-table td {
+  padding: 1.25rem 1.5rem;
+  text-align: right;
+  border-bottom: 1px solid var(--color-border);
+  vertical-align: middle;
+}
+
+.matrix-table th:first-child, .matrix-table td:first-child {
+  text-align: left;
+  background-color: var(--color-surface);
+  position: sticky;
+  left: 0;
+  z-index: 10;
+  box-shadow: 2px 0 5px rgba(0,0,0,0.02);
+}
+
+.matrix-table th {
+  background-color: var(--color-surface);
+  color: var(--color-text-secondary);
+  font-weight: 600;
+  white-space: nowrap;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.matrix-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.matrix-table tbody tr:hover td {
+  background-color: rgba(79, 70, 229, 0.02);
+}
+
+.font-medium { font-weight: 600; color: var(--color-text-primary); }
+.font-bold { font-weight: 800; }
+
+.math-process {
+  font-size: 0.85rem;
+  color: var(--color-text-secondary);
+  font-family: 'Fira Code', monospace; /* Monospace for alignment */
+  margin-bottom: 0.35rem;
+  white-space: nowrap;
+  opacity: 0.8;
+}
+
+.math-result {
+  font-weight: 700;
+  color: var(--color-text-primary);
+  font-size: 1.05rem;
+}
+
+.highlight-col {
+  background-color: rgba(79, 70, 229, 0.05) !important;
+  color: var(--color-primary);
+  border-left: 1px solid rgba(79, 70, 229, 0.1);
+}
+
+/* Academic Transparency Styles */
+.info-tooltip {
+  display: inline-flex;
+  align-items: center;
+  color: var(--color-primary);
+  opacity: 0.6;
+  cursor: help;
+  margin-left: 0.75rem;
+  transition: opacity 0.2s;
+}
+.info-tooltip:hover {
+  opacity: 1;
+}
+
+.clickable-cell {
+  cursor: pointer;
+  transition: background-color 0.2s, transform 0.1s;
+  position: relative;
+}
+.clickable-cell:hover {
+  background-color: rgba(79, 70, 229, 0.08);
+  transform: scale(1.02);
+  z-index: 10;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+  border-radius: 4px;
+}
+.clickable-cell::after {
+  content: "Lihat Detail";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: var(--color-primary);
+  color: white;
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 0.35rem 0.75rem;
+  border-radius: var(--radius-full);
+  opacity: 0;
+  transition: opacity 0.2s;
+  pointer-events: none;
+  white-space: nowrap;
+}
+.clickable-cell:hover::after {
+  opacity: 1;
+}
+.clickable-cell:hover .math-process,
+.clickable-cell:hover .math-result {
+  opacity: 0;
+}
+
+.math-detail-modal .detail-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.75rem 0;
+  border-bottom: 1px solid var(--color-border);
+}
+.math-detail-modal .detail-row:last-child {
+  border-bottom: none;
+}
+.math-detail-modal .detail-label {
+  color: var(--color-text-secondary);
+}
+.math-detail-modal .detail-value {
+  font-weight: 600;
+}
+.math-detail-modal .formula-box {
+  background-color: var(--color-bg);
+  padding: 1.5rem;
+  border-radius: var(--radius-md);
+  margin-top: 1rem;
+  text-align: center;
+  font-family: 'Fira Code', monospace;
+  font-size: 1.1rem;
+  color: var(--color-primary);
+  border: 1px dashed var(--color-border);
+}
