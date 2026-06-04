@@ -4,33 +4,34 @@ import initialCriteria from '../data/criteria.json';
 
 export const AppContext = createContext();
 
+const DATA_VERSION = '2.0'; // Increment this to force a fresh reset for all users
+
 export const AppProvider = ({ children }) => {
   // State for cameras
   const [cameras, setCameras] = useState(() => {
+    const savedVersion = localStorage.getItem('saw_data_version');
+    if (savedVersion !== DATA_VERSION) {
+      localStorage.removeItem('saw_cameras');
+      localStorage.removeItem('saw_criteria');
+      localStorage.setItem('saw_data_version', DATA_VERSION);
+      return initialCameras;
+    }
     const saved = localStorage.getItem('saw_cameras');
     if (saved) {
-      const parsed = JSON.parse(saved);
-      // Data migration check: if cameras don't have 'values' map, it's the old structure!
-      if (parsed.length > 0 && parsed[0].price !== undefined && parsed[0].values === undefined) {
-        localStorage.removeItem('saw_cameras');
-        localStorage.removeItem('saw_criteria'); // Clear both to stay in sync
-        return initialCameras;
-      }
-      return parsed;
+      return JSON.parse(saved);
     }
     return initialCameras;
   });
 
   // State for criteria
   const [criteria, setCriteria] = useState(() => {
+    const savedVersion = localStorage.getItem('saw_data_version');
+    if (savedVersion !== DATA_VERSION) {
+      return initialCriteria;
+    }
     const saved = localStorage.getItem('saw_criteria');
     if (saved) {
-      const parsed = JSON.parse(saved);
-      // If criteria don't have underscore in ID, it's the old structure
-      if (parsed.length > 0 && !String(parsed[0].id).includes('_') && !String(parsed[0].id).includes('C')) {
-        return initialCriteria;
-      }
-      return parsed;
+      return JSON.parse(saved);
     }
     return initialCriteria;
   });
