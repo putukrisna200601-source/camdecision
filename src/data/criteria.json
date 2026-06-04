@@ -9,28 +9,21 @@
   {
     "id": "crit_res",
     "name": "Resolusi",
-    "weight": 20,
+    "weight": 25,
     "type": "Benefit",
     "description": "Resolusi sensor dalam Megapixel (semakin besar semakin baik)"
   },
   {
-    "id": "crit_af",
-    "name": "Autofocus",
-    "weight": 20,
-    "type": "Benefit",
-    "description": "Skor kecepatan dan akurasi autofocus (0-100)"
-  },
-  {
     "id": "crit_vid",
     "name": "Kemampuan Video",
-    "weight": 20,
+    "weight": 25,
     "type": "Benefit",
     "description": "Skor kualitas perekaman video (0-100)"
   },
   {
     "id": "crit_weight",
     "name": "Berat Kamera",
-    "weight": 10,
+    "weight": 20,
     "type": "Cost",
     "description": "Berat kamera dalam gram (semakin ringan semakin baik)"
   }
