@@ -173,7 +173,7 @@ const Criteria = () => {
                     <td>
                       <div className="code-cell">
                         <GripVertical size={16} className="grip-icon" />
-                        <span className="font-medium">{crit.id}</span>
+                        <span className="font-medium">C{index + 1}</span>
                       </div>
                     </td>
                     <td className="font-semibold">{crit.name}</td>
