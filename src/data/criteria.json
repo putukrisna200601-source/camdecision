@@ -1,27 +1,27 @@
 [
   {
-    "id": "crit_price",
+    "id": "C1",
     "name": "Harga",
     "weight": 30,
     "type": "Cost",
     "description": "Harga kamera dalam Rupiah (semakin murah semakin baik)"
   },
   {
-    "id": "crit_res",
+    "id": "C2",
     "name": "Resolusi",
     "weight": 25,
     "type": "Benefit",
     "description": "Resolusi sensor dalam Megapixel (semakin besar semakin baik)"
   },
   {
-    "id": "crit_vid",
+    "id": "C3",
     "name": "Kemampuan Video",
     "weight": 25,
     "type": "Benefit",
     "description": "Skor kualitas perekaman video (0-100)"
   },
   {
-    "id": "crit_weight",
+    "id": "C4",
     "name": "Berat Kamera",
     "weight": 20,
     "type": "Cost",

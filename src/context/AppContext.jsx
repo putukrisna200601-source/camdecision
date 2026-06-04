@@ -4,7 +4,7 @@ import initialCriteria from '../data/criteria.json';
 
 export const AppContext = createContext();
 
-const DATA_VERSION = '2.0'; // Increment this to force a fresh reset for all users
+const DATA_VERSION = '3.0'; // Increment this to force a fresh reset for all users
 
 export const AppProvider = ({ children }) => {
   // State for cameras
