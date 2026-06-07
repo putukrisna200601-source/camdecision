@@ -1,9 +1,8 @@
 import React, { useEffect } from 'react';
-import { Trophy, ChevronLeft, BarChart2, FileText, Download } from 'lucide-react';
+import { Trophy, ChevronLeft, BarChart2 } from 'lucide-react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import Button from '../components/Button';
 import Card from '../components/Card';
-import { exportToPDF } from '../utils/exportPDF';
 import './Results.css';
 
 const Results = () => {
@@ -192,10 +191,6 @@ const Results = () => {
         <div className="page-actions" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginTop: '3rem', paddingTop: '2rem', paddingBottom: '2rem', borderTop: '1px solid var(--color-border)' }}>
           <Button variant="outline" onClick={() => navigate('/calculator')}>
             🡨 Kembali ke Kalkulator
-          </Button>
-          
-          <Button variant="outline" icon={<FileText size={18} />} onClick={() => exportToPDF(sawResult)} style={{ backgroundColor: 'white', color: 'var(--color-primary)', borderColor: 'var(--color-primary)' }}>
-            Export PDF
           </Button>
 
           <Button variant="primary" onClick={() => navigate('/')}>
